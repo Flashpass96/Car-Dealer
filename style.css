@@ -39,9 +39,9 @@ body {
    font-weight: 500;
    margin: 0 20px;
    transition: .3s;
-   opacity: o;
+   opacity: 0;
    animation: slideTop .5s ease forwards;
-   animation-delay: calc( .0.5s * var(--i));
+   animation-delay: calc(.5s * var(--i));
 }
 
 .navbar a:hover,
@@ -186,6 +186,21 @@ img {
     animation: slideRight2 2s ease forwards;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #222;
+    margin: 2px;
+    transition: 0.4s;
+}
+
 @keyframes slideRight {
     0% {
         transform: translateX(-100px);
@@ -258,3 +273,111 @@ img {
     }
 }
 
+@media (max-width: 768px) {
+
+    /* Header */
+    .header {
+        padding: 20px 5%;
+    }
+
+    .social-media {
+        width: 120px;
+        height: 35px;
+    }
+
+    .social-media a {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Home section */
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 5% 0;
+        height: auto;
+        text-align: center;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 34px;
+    }
+
+    .home-content h3 {
+        font-size: 26px;
+    }
+
+    .home-content p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        font-size: 15px;
+        margin-bottom: 3rem;
+    }
+
+    /* Image section */
+    .home-img {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        width: 280px;
+        height: 280px;
+        margin-top: 40px;
+        transform: rotate(45deg);
+    }
+
+    .home-img .rhombus {
+        border-width: 15px;
+    }
+
+    .home-img .rhombus img {
+        max-width: 400px;
+    }
+
+    img {
+        top: 60px;
+        left: -120px;
+        max-width: 400px;
+    }
+
+    .home .rhombus2 {
+        width: 400px;
+        height: 400px;
+        top: -30%;
+        right: -30%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 220px;
+        height: auto;
+        background: #eaeaea;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.4s ease;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, .1);
+}
+
+.navbar a {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.navbar.active {
+    right: 5%;
+}
+}
